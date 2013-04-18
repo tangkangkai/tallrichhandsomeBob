@@ -160,7 +160,7 @@ class LambdaProcedure(object):
         self.body = body
         self.env = env
 
-    def __str__(self):
+    def __str__(self): 
         return "(lambda {0} {1})".format(str(self.formals), str(self.body))
 
     def __repr__(self):
@@ -204,8 +204,13 @@ def do_lambda_form(vals, env):
     check_form(vals, 2)
     formals = vals[0]
     check_formals(formals)
-    "*** YOUR CODE HERE ***"
-    return LambdaProcedure(formals, do_begin_form(vals.second, env), env)
+    "*** YOUR CODE HERE ***"# Q8
+    vals_str = ''
+    if len(vals) == 2:
+        return LambdaProcedure(formals, vals[1], env)
+    for i in range(1, len(vals)):
+        vals_str += ' ' + str(vals[i])
+    return LambdaProcedure(formals, '(begin' + vals_str + ')', env)
 
 
 def do_mu_form(vals):
