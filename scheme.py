@@ -140,7 +140,19 @@ class Frame(object):
         <{a: 1, b: 2, c: 3} -> <Global Frame>>
         """
         frame = Frame(self)
-        "*** YOUR CODE HERE ***"
+        "*** YOUR CODE HERE ***"# Q10
+        formals_len = len(formals)
+        vals_len = len(vals)
+
+        if vals_len < formals_len:
+            raise SyntaxError("too few arguments are given")
+
+        if vals_len > formals_len:
+            raise SyntaxError("too many arguments are given") 
+
+        for i in range(formals_len):
+            frame.define(formals[i], vals[i])
+
         return frame
 
     def define(self, sym, val):
