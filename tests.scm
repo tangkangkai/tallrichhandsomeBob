@@ -15,13 +15,22 @@
 
 ;;; 1.1.1
 
+;;; Test for A9
+
+(define (square x) (* x x))
+; expect square
+
+square
+; expect (lambda (x) (* x x))
+
+
 ;;; Test for Q7 and Q8
 
 (begin (+ 2 3) (+ 5 6))
 ; expect 11
 
 (begin (display 3) (newline) (+ 2 3))
-; expect 5
+; expect 3 ; 5
 
 (lambda (x y) (+ x y))
 ; expect (lambda (x y) (+ x y))

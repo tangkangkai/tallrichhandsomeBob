@@ -231,9 +231,11 @@ def do_define_form(vals, env):
         return vals[0]
 
     elif isinstance(target, Pair):
-        "*** YOUR CODE HERE ***"
-
-
+        "*** YOUR CODE HERE ***" # A9
+        target_operator = target[0]
+        target_operand = target.second
+        env.define(target[0], do_lambda_form(Pair(target_operand, vals.second), env))
+        return target_operator
     else:
         raise SchemeError("bad argument to define")
 
