@@ -360,7 +360,16 @@ def check_formals(formals):
 
     >>> check_formals(read_line("(a b c)"))
     """
-    "*** YOUR CODE HERE ***"
+    "*** YOUR CODE HERE ***" # B11
+    check_distinct = []
+    for i in range(len(formals)):
+        el = formals[i]
+
+        if el in check_distinct:
+            raise SchemeError("Symbol is not distinct")
+        check_distinct.append(el)
+        check_type(el, scheme_symbolp, i, 'parameter')
+
 
 ##################
 # Tail Recursion #
