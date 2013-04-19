@@ -15,6 +15,47 @@
 
 ;;; 1.1.1
 
+;;; Test for Q12
+
+(define size 2)
+; expect size
+size
+; expect 2
+(* 5 size)
+; expcet 10
+
+(define pi 3.14159)
+; expect pi
+(define radius 10)
+; expect radius
+(* pi (* radius radius))
+; expect 314.159
+(define circumference (* 2 pi radius))
+; expect circumference
+circumference
+; expect 62.8318
+
+(define (square x) (* x x))
+; expect square
+(square 21)
+; expect 441
+(square (+ 2 5))
+; expect 49
+(square (square 3))
+; expect 81
+(define (sum-of-squares x y)
+  (+ (square x) (square y)))
+; expect sum-of-squares
+(sum-of-squares 3 4)
+; expect 25
+(define (f a)
+  (sum-of-squares (+ a 1) (* a 2)))
+; expect f
+(f 5)
+; expect 136
+
+
+
 ;;; Test for A9
 
 (define (square x) (* x x))

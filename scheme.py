@@ -59,9 +59,13 @@ def scheme_apply(procedure, args, env):
     if isinstance(procedure, PrimitiveProcedure):
         return apply_primitive(procedure, args, env)
     elif isinstance(procedure, LambdaProcedure):
-        "*** YOUR CODE HERE ***"
+        "*** YOUR CODE HERE ***"# Q12
+        lambda_env = procedure.env.make_call_frame(procedure.formals, args)
+        return scheme_eval(procedure.body, lambda_env)
+
     elif isinstance(procedure, MuProcedure):
         "*** YOUR CODE HERE ***"
+
     else:
         raise SchemeError("Cannot call {0}".format(str(procedure)))
 
@@ -115,7 +119,7 @@ class Frame(object):
             return self.bindings[symbol]
 
         if self.parent:
-            return lookup(self.parent, symbol)
+            return self.parent.lookup(symbol)
 
         raise SchemeError("unknown identifier: {0}".format(str(symbol)))
 
