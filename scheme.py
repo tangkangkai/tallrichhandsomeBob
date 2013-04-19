@@ -75,10 +75,9 @@ def apply_primitive(procedure, args, env):
     4
     """
     "*** YOUR CODE HERE ***" # Q3
-    from operator import getitem
     argument_list = []
     for i in range(len(args)):
-        argument_list.append(getitem(args, i))
+        argument_list.append(args[i])
 
     if procedure.use_env == True:
         argument_list.append(env)
@@ -217,12 +216,9 @@ def do_lambda_form(vals, env):
     formals = vals[0]
     check_formals(formals)
     "*** YOUR CODE HERE ***"# Q8
-    vals_str = ''
     if len(vals) == 2:
         return LambdaProcedure(formals, vals[1], env)
-    for i in range(1, len(vals)):
-        vals_str += ' ' + str(vals[i])
-    return LambdaProcedure(formals, '(begin' + vals_str + ')', env)
+    return LambdaProcedure(formals, Pair('begin', vals.second), env)
 
 
 def do_mu_form(vals):
@@ -329,7 +325,7 @@ def do_begin_form(vals, env):
     "*** YOUR CODE HERE ***" # Q7 
     if len(vals) == 1:
         return vals[0]
-    scheme_eval(vals[0],env)
+    scheme_eval(vals[0],env)    
     return do_begin_form(vals.second, env)
 
 LOGIC_FORMS = {
@@ -384,7 +380,7 @@ def scheme_optimized_eval(expr, env):
         # Evaluate Atoms
         if scheme_symbolp(expr):
             return env.lookup(expr)
-        elif scheme_atomp(expr) or scheme_stringp(expr) or expr is okay:
+        elif scheme_atomp(expr) or scheme_stringp(elifxpr) or expr is okay:
             return expr
 
         # All non-atomic expressions are lists.
