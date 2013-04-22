@@ -391,7 +391,7 @@ circumference
   (* x y))
 ; expect 21
 
-(exit)
+
 ;;; 2.1.1
 
 (define (add-rat x y)
@@ -702,6 +702,7 @@ one-through-four
 (if (or false False #f) 1 2)
 ; expect 2
 
+
 (define (loop) (loop))
 (cond (false (loop))
       (12))
@@ -750,13 +751,43 @@ one-through-four
 ;; the merged lists.
 (define (merge comp list1 list2)
     ; *** YOUR CODE HERE ***
-    nil)
+    (if (eq? comp <)
+      (if (eq? (len list1) 0)
+        list2
+        (if (eq? (len list2) 0)
+          list1
+          (if (< (car list1) (car list2))
+            (cons (car list1) (merge comp (cdr list1) list2))
+            (if (> (car list1) (car list2))
+              (cons (car list2) (merge comp (cdr list2) list1))
+              (cons (car list1) (merge comp (cdr list1) (cdr list2)))
+              )
+          )
+        )
+      )
+
+    (if (eq? comp >)
+      (if (eq? (len list1) 0)
+        list2
+        (if (eq? (len list2) 0)
+          list1
+          (if (> (car list1) (car list2))
+            (cons (car list1) (merge comp (cdr list1) list2))
+            (if (< (car list1) (car list2))
+              (cons (car list2) (merge comp (cdr list2) list1))
+              (cons (car list1) (merge comp (cdr list1) (cdr list2)))
+              )
+          )
+        )
+      )
+      nil))
+  )
 
 (merge < '(1 5 7 9) '(4 8 10))
 ; expect (1 4 5 7 8 9 10)
 (merge > '(9 7 5 1) '(10 8 4 3))
 ; expect (10 9 8 7 5 4 3 1)
-
+(exit)
 ;; Sort a list of lists of numbers to be in decreasing lexicographic
 ;; order. Relies on a correct implementation of merge.
 (define (sort-lists lsts)

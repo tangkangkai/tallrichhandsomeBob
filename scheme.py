@@ -371,7 +371,7 @@ def do_cond_form(vals, env):
         if scheme_true(test):
             "*** YOUR CODE HERE ***" # A15
             if clause.second is nil:
-                return True
+                return test
             return do_begin_form(clause.second, env) 
     return okay
 
