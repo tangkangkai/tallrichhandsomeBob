@@ -64,7 +64,16 @@ def scheme_apply(procedure, args, env):
         return scheme_eval(procedure.body, lambda_env)
 
     elif isinstance(procedure, MuProcedure):
-        "*** YOUR CODE HERE ***"
+        "*** YOUR CODE HERE ***"# B17
+        formals_len = len(procedure.formals)
+        vals_len = len(args)
+        if vals_len < formals_len:
+            raise SyntaxError("too few arguments are given")
+        if vals_len > formals_len:
+            raise SyntaxError("too many arguments are given") 
+        for i in range(formals_len):
+            env.define(procedure.formals[i], args[i])
+        return scheme_eval(procedure.body, env)
 
     else:
         raise SchemeError("Cannot call {0}".format(str(procedure)))
@@ -230,7 +239,12 @@ def do_mu_form(vals):
     check_form(vals, 2)
     formals = vals[0]
     check_formals(formals)
-    "*** YOUR CODE HERE ***"
+    "*** YOUR CODE HERE ***" # B17
+    if len(vals) == 2:
+        return MuProcedure(formals, vals[1])
+    return MuProcedure(formals, Pair('begin', vals.second))
+
+
 
 def do_define_form(vals, env):
     """Evaluate a define form with parameters VALS in environment ENV."""

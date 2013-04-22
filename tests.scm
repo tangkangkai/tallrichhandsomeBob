@@ -15,6 +15,15 @@
 
 ;;; 1.1.1
 
+;;; Test for B17
+
+(define f (mu (x) (+ x y)))
+; expect f
+(define g (lambda (x y) (f (+ x x))))
+; expect g
+(g 3 7)
+; expect 13
+
 ;;; Test for A16
 
 (define x 'hi)
@@ -279,7 +288,7 @@ circumference
 (abs 3)
 ; expect 3
 
-(exit)
+
 
 (define (a-plus-abs-b a b)
   ((if (> b 0) + -) a b))
@@ -382,6 +391,7 @@ circumference
   (* x y))
 ; expect 21
 
+(exit)
 ;;; 2.1.1
 
 (define (add-rat x y)
