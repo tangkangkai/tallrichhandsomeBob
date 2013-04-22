@@ -819,7 +819,7 @@ one-through-four
 (define us-coins '(50 25 10 5 1))
 (count-change 20 us-coins 18)
 ; expect 8
-(exit)
+
 
 ; Problem B20
 
@@ -827,12 +827,19 @@ one-through-four
 ;; each partition must be at most MAX-VALUE
 (define (count-partitions total max-value)
   ; *** YOUR CODE HERE ***
-  nil)
+  (if (= total 0)
+    1
+    (if (or (< total 0) (= max-value 0))
+      0
+      (+ (count-partitions (- total max-value) max-value) (count-partitions total (- max-value 1)))
+    )
+  )
+)
 
 (count-partitions 5 3)
 ; expect 5
 ; Note: The 5 partitions are [[3 2] [3 1 1] [2 2 1] [2 1 1 1] [1 1 1 1 1]]
-
+(exit)
 ; Problem 21
 
 ;; A list of all ways to partition TOTAL, where  each partition must
