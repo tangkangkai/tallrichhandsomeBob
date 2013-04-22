@@ -751,43 +751,26 @@ one-through-four
 ;; the merged lists.
 (define (merge comp list1 list2)
     ; *** YOUR CODE HERE ***
-    (if (eq? comp <)
-      (if (eq? (len list1) 0)
-        list2
-        (if (eq? (len list2) 0)
-          list1
-          (if (< (car list1) (car list2))
-            (cons (car list1) (merge comp (cdr list1) list2))
-            (if (> (car list1) (car list2))
-              (cons (car list2) (merge comp (cdr list2) list1))
-              (cons (car list1) (merge comp (cdr list1) (cdr list2)))
-              )
+    (if (eq? (len list1) 0)
+      list2
+      (if (eq? (len list2) 0)
+        list1
+        (if (comp (car list1) (car list2))
+          (cons (car list1) (merge comp (cdr list1) list2))
+          (if (comp (car list2) (car list1))
+            (cons (car list2) (merge comp (cdr list2) list1))
+            (cons (car list1) (merge comp (cdr list1) (cdr list2)))
           )
         )
       )
-
-    (if (eq? comp >)
-      (if (eq? (len list1) 0)
-        list2
-        (if (eq? (len list2) 0)
-          list1
-          (if (> (car list1) (car list2))
-            (cons (car list1) (merge comp (cdr list1) list2))
-            (if (< (car list1) (car list2))
-              (cons (car list2) (merge comp (cdr list2) list1))
-              (cons (car list1) (merge comp (cdr list1) (cdr list2)))
-              )
-          )
-        )
-      )
-      nil))
-  )
+    )
+)
 
 (merge < '(1 5 7 9) '(4 8 10))
 ; expect (1 4 5 7 8 9 10)
 (merge > '(9 7 5 1) '(10 8 4 3))
 ; expect (10 9 8 7 5 4 3 1)
-(exit)
+
 ;; Sort a list of lists of numbers to be in decreasing lexicographic
 ;; order. Relies on a correct implementation of merge.
 (define (sort-lists lsts)
@@ -820,12 +803,23 @@ one-through-four
 ;; At most MAX-COINS total coins can be used.
 (define (count-change total denoms max-coins)
   ; *** YOUR CODE HERE ***
-  nil)
+  (if (= total 0)
+    1
+    (if (or (< total 0) (= (len denoms) 0))
+      0
+      (if (> (/ total (car denoms)) max-coins)
+        0
+        (+ (count-change (- total (car denoms)) denoms max-coins) (count-change total (cdr denoms) max-coins))
+      )
+    )
+  )
+)
+  
 
 (define us-coins '(50 25 10 5 1))
 (count-change 20 us-coins 18)
 ; expect 8
-
+(exit)
 
 ; Problem B20
 
