@@ -285,7 +285,7 @@ def do_let_form(vals, env):
 def do_if_form(vals, env):
     """Evaluate if form with parameters VALS in environment ENV."""
     check_form(vals, 2, 3)
-    "*** YOUR CODE HERE ***"# A13
+    "*** YOUR CODE HERE ***" # A13
     if scheme_true(scheme_eval(vals[0], env)):
         return vals[1]
     if len(vals) == 3:
@@ -346,7 +346,10 @@ def do_cond_form(vals, env):
         else:
             test = scheme_eval(clause.first, env)
         if scheme_true(test):
-            "*** YOUR CODE HERE ***"
+            "*** YOUR CODE HERE ***" # A15
+            if clause.second is nil:
+                return True
+            return do_begin_form(clause.second, env) 
     return okay
 
 def do_begin_form(vals, env):

@@ -15,6 +15,20 @@
 
 ;;; 1.1.1
 
+;;; Test for A15
+
+(cond ((= 4 3) 'nope)
+      ((= 4 4) 'hi)
+      (else 'wait))
+; expect hi
+(cond ((= 4 3) 'wat)
+      ((= 4 4))
+      (else 'hm))
+; expect True
+(cond ((= 4 4) 'here 42)
+      (else 'wat 0))
+; expect 42
+
 ;;; Test for B14
 
 (and)
@@ -205,7 +219,7 @@ size
 (define circumference (* 2 pi radius))
 circumference
 ; expect 62.8318
-(exit)
+
 ;;; 1.1.4
 
 (define (square x) (* x x))
@@ -233,6 +247,7 @@ circumference
 (f 5)
 ; expect 136
 
+
 ;;; 1.1.6
 
 (define (abs x)
@@ -247,6 +262,8 @@ circumference
 
 (abs 3)
 ; expect 3
+
+(exit)
 
 (define (a-plus-abs-b a b)
   ((if (> b 0) + -) a b))
