@@ -15,6 +15,17 @@
 
 ;;; 1.1.1
 
+;;; Test for A13
+
+scm> (if (= 4 2) true false)
+; expect False
+
+(if (= 4 4) (* 1 2) (+ 3 4))
+; expect 2
+
+(if (= 4 2) true)
+; expect okay
+
 ;;; Test for Q12
 
 (define size 2)
