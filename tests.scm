@@ -15,9 +15,30 @@
 
 ;;; 1.1.1
 
+;;; Test for B14
+
+(and)
+; expect True
+(or)
+; expect False
+(and 4 5 6)
+; expect 6
+(or 5 2 1)
+; expect 5
+(and #t #f 42 (/ 1 0))
+; expect False
+(or 4 #t (/ 1 0))
+; expect 4
+
+(or (begin (print 1) #t) 3)
+; expect 1 ; True
+(or (begin (print 1) #f) 3)
+; expect 1 ; 3
+
+
 ;;; Test for A13
 
-scm> (if (= 4 2) true false)
+(if (= 4 2) true false)
 ; expect False
 
 (if (= 4 4) (* 1 2) (+ 3 4))

@@ -285,7 +285,7 @@ def do_let_form(vals, env):
 def do_if_form(vals, env):
     """Evaluate if form with parameters VALS in environment ENV."""
     check_form(vals, 2, 3)
-    "*** YOUR CODE HERE ***"
+    "*** YOUR CODE HERE ***"# A13
     if scheme_true(scheme_eval(vals[0], env)):
         return vals[1]
     if len(vals) == 3:
@@ -295,7 +295,15 @@ def do_if_form(vals, env):
 
 def do_and_form(vals, env):
     """Evaluate short-circuited and with parameters VALS in environment ENV."""
-    "*** YOUR CODE HERE ***"
+    "*** YOUR CODE HERE ***" # B14
+    count = 0
+    if len(vals) == 0:
+        return True
+    while count < len(vals):
+        if scheme_false(scheme_eval(vals[count], env)):
+            return False
+        count += 1
+    return vals[count - 1]
 
 def quote(value):
     """Return a Scheme expression quoting the Scheme VALUE.
@@ -310,7 +318,19 @@ def quote(value):
 
 def do_or_form(vals, env):
     """Evaluate short-circuited or with parameters VALS in environment ENV."""
-    "*** YOUR CODE HERE ***"
+    "*** YOUR CODE HERE ***" # B14
+    count = 0
+    if len(vals) == 0:
+        return False
+    while count < len(vals) - 1:
+        value = scheme_eval(vals[count], env)  #We just want to evaluate it once
+        if scheme_true(value):
+            return quote(value)
+        count += 1
+    if scheme_true(scheme_eval(vals[count], env)):
+        return vals[count]
+    else:
+        return False
 
 def do_cond_form(vals, env):
     """Evaluate cond form with parameters VALS in environment ENV."""
