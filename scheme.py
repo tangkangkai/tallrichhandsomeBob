@@ -268,7 +268,16 @@ def do_let_form(vals, env):
 
     # Add a frame containing bindings
     names, values = nil, nil
-    "*** YOUR CODE HERE ***"
+    "*** YOUR CODE HERE ***" # A16
+    length = len(bindings)
+    count = 0
+    while count < length:
+        local_define = bindings[count]
+        name = local_define[0]
+        value = scheme_eval(local_define.second.first, env)
+        names = Pair(name, names)
+        values = Pair(value, values)
+        count += 1
     new_env = env.make_call_frame(names, values)
 
     # Evaluate all but the last expression after bindings, and return the last
