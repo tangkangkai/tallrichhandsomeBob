@@ -1,0 +1,1160 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"to",
+				"torque"
+			],
+			[
+				"left",
+				"leftWeight"
+			],
+			[
+				"type",
+				"type()	type ctor"
+			],
+			[
+				"Hash",
+				"HashMap"
+			],
+			[
+				"ent",
+				"entrySet"
+			],
+			[
+				"start",
+				"startkey"
+			],
+			[
+				"is",
+				"isStart"
+			],
+			[
+				"wri",
+				"writeLong(long)	void"
+			],
+			[
+				"Long",
+				"LongWritable"
+			],
+			[
+				"get",
+				"getValue()	V"
+			],
+			[
+				"sets",
+				"setStarter"
+			],
+			[
+				"w",
+				"writeBoolean(boolean)	void"
+			],
+			[
+				"isStart",
+				"isStarter"
+			],
+			[
+				"In",
+				"Integer"
+			],
+			[
+				"res",
+				"researcharea"
+			],
+			[
+				"course",
+				"courseForm"
+			],
+			[
+				"teah",
+				"teacher"
+			],
+			[
+				"text",
+				"textbook"
+			],
+			[
+				"for",
+				"ForeignKey  (class)"
+			],
+			[
+				"Date",
+				"DateTimeField"
+			],
+			[
+				"ti",
+				"TimeField  (class)"
+			],
+			[
+				"model",
+				"models"
+			],
+			[
+				"reso",
+				"resource"
+			],
+			[
+				"file",
+				"FileField  (class)"
+			],
+			[
+				"mod",
+				"Model  (class)"
+			],
+			[
+				"max",
+				"max_length	Default"
+			],
+			[
+				"mo",
+				"Model  (class)"
+			],
+			[
+				"jq",
+				"jQuery"
+			],
+			[
+				"j",
+				"jq-boilerplate	jQuery Plugin Boilerplate"
+			],
+			[
+				"add",
+				"addCallback  (variable)"
+			],
+			[
+				"low",
+				"lower_bound	Default"
+			],
+			[
+				"upper",
+				"upper_bound	Default"
+			],
+			[
+				"interl",
+				"interleave_recursive	Default"
+			],
+			[
+				"rever",
+				"reverse_helper	Default"
+			],
+			[
+				"rest",
+				"rest_item	Default"
+			],
+			[
+				"p",
+				"pop()	Mutable"
+			],
+			[
+				"uint",
+				"uint8_t"
+			],
+			[
+				"rt",
+				"rtype"
+			],
+			[
+				"win_",
+				"win_margin"
+			],
+			[
+				"mean",
+				"mean_strategy"
+			],
+			[
+				"comp",
+				"compare_strategies"
+			],
+			[
+				"eve",
+				"eval_strategy_range"
+			],
+			[
+				"opp",
+				"opponent_score"
+			],
+			[
+				"touch",
+				"touchdown_strategy"
+			],
+			[
+				"num",
+				"num_rolls"
+			],
+			[
+				"ext",
+				"extra_point"
+			],
+			[
+				"score",
+				"score"
+			],
+			[
+				"min_poin",
+				"min_points"
+			],
+			[
+				"op",
+				"opponent_score"
+			],
+			[
+				"oppon",
+				"opponent_score"
+			],
+			[
+				"comback",
+				"comeback_strategy"
+			],
+			[
+				"sco",
+				"score"
+			],
+			[
+				"make",
+				"make_comeback_strategy"
+			],
+			[
+				"eval",
+				"eval_strategy_range"
+			],
+			[
+				"final",
+				"final_strategy"
+			],
+			[
+				"scoe",
+				"score0"
+			],
+			[
+				"roll",
+				"rolled_result"
+			],
+			[
+				"differ",
+				"difference_of_opponent_current"
+			],
+			[
+				"diff",
+				"difference_of_opponent_current"
+			],
+			[
+				"def",
+				"defs	Method"
+			],
+			[
+				"try",
+				"TryStatement"
+			],
+			[
+				"pro",
+				"projection"
+			],
+			[
+				"b",
+				"b"
+			],
+			[
+				"resul",
+				"resultObj"
+			],
+			[
+				"findT",
+				"findTaintedArg"
+			],
+			[
+				"__c",
+				"__call__"
+			],
+			[
+				"set",
+				"setCurrentTainted"
+			],
+			[
+				"currentS",
+				"currentScopeTainted"
+			],
+			[
+				"_ref",
+				"_ref7"
+			],
+			[
+				"decl",
+				"declarationTaintCheck"
+			],
+			[
+				"M",
+				"MemberExpression"
+			],
+			[
+				"id",
+				"Identifier"
+			],
+			[
+				"marg",
+				"margin-bottom"
+			],
+			[
+				"m",
+				"evalMemberExpr"
+			],
+			[
+				"arg",
+				"arguments"
+			],
+			[
+				"call",
+				"caller"
+			],
+			[
+				"argu",
+				"argument"
+			],
+			[
+				"cons",
+				"console"
+			],
+			[
+				"ta",
+				"taints"
+			],
+			[
+				"tain",
+				"taints"
+			],
+			[
+				"key",
+				"keys"
+			],
+			[
+				"k",
+				"keys"
+			],
+			[
+				"boar",
+				"boardGUI"
+			],
+			[
+				"player",
+				"player2"
+			],
+			[
+				"Huan",
+				"HumanPlayer"
+			],
+			[
+				"pla",
+				"player1"
+			],
+			[
+				"Hua",
+				"HumanPlayer"
+			],
+			[
+				"Human",
+				"HumanPlayer"
+			],
+			[
+				"I",
+				"INITIAL_PIECES"
+			],
+			[
+				"getc",
+				"getCurrentPlayer"
+			],
+			[
+				"getr",
+				"getRow1"
+			],
+			[
+				"mark",
+				"marked"
+			],
+			[
+				"piece",
+				"pieceSum"
+			],
+			[
+				"next",
+				"nextPiece"
+			],
+			[
+				"pl",
+				"player"
+			],
+			[
+				"getC",
+				"getCol1"
+			],
+			[
+				"last",
+				"lastSecondMove"
+			],
+			[
+				"diagon",
+				"diagonal1"
+			],
+			[
+				"row",
+				"rowSum"
+			],
+			[
+				"le",
+				"leagalMoves"
+			],
+			[
+				"dia",
+				"diagonal2"
+			],
+			[
+				"move",
+				"move1"
+			],
+			[
+				"col",
+				"col0"
+			],
+			[
+				"pie",
+				"piecesInDiagonal2"
+			],
+			[
+				"diag",
+				"diagonal1"
+			],
+			[
+				"pieces",
+				"piecesInRow"
+			],
+			[
+				"_row",
+				"_row0"
+			],
+			[
+				"column",
+				"column0"
+			],
+			[
+				"getR",
+				"getRow1"
+			],
+			[
+				"_ro",
+				"_row1"
+			],
+			[
+				"getCol",
+				"getCol1"
+			],
+			[
+				"getCo",
+				"getCol0"
+			],
+			[
+				"_col",
+				"_col1"
+			],
+			[
+				"_co",
+				"_col0"
+			],
+			[
+				"_r",
+				"_row1"
+			],
+			[
+				"_",
+				"_row0"
+			],
+			[
+				"_c",
+				"_col0"
+			],
+			[
+				"moves",
+				"movesMade"
+			],
+			[
+				"ro",
+				"row1"
+			],
+			[
+				"pece",
+				"piecesInRow"
+			],
+			[
+				"current",
+				"currentPlayer"
+			],
+			[
+				"piecesin",
+				"piecesInDiagonal2"
+			],
+			[
+				"pec",
+				"pieceSum"
+			],
+			[
+				"dr",
+				"dRow"
+			],
+			[
+				"dc",
+				"dCol"
+			],
+			[
+				"dcol",
+				"dcolumn"
+			],
+			[
+				"board",
+				"boardContent"
+			],
+			[
+				"bor",
+				"boardContent"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "buffer.py",
+			"settings":
+			{
+				"buffer_size": 3830,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/SASS Build/SASS.sublime-build",
+	"command_palette":
+	{
+		"height": 375.0,
+		"selected_items":
+		[
+			[
+				"set s",
+				"Set Syntax: C"
+			],
+			[
+				"java",
+				"Set Syntax: Java"
+			],
+			[
+				"python",
+				"Set Syntax: Python"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"searc",
+				"Stackoverflow: Search Selection"
+			],
+			[
+				"run",
+				"Run JavaScript in the browser"
+			],
+			[
+				"pace",
+				"Package Control: List Packages"
+			],
+			[
+				"html",
+				"Tidy HTML"
+			],
+			[
+				"tide",
+				"Snippet: Google CDN jQuery script include"
+			],
+			[
+				"alli",
+				"Preferences: Alignment File Settings – Default"
+			],
+			[
+				"align",
+				"Preferences: Alignment Key Bindings – User"
+			],
+			[
+				"pyt",
+				"Set Syntax: Python"
+			],
+			[
+				"set pyt",
+				"Set Syntax: Python (PyTags)"
+			],
+			[
+				"set sass",
+				"Set Syntax: Sass"
+			],
+			[
+				"",
+				"Bracket Highlighter: Fold by Brackets"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: List Packages"
+			],
+			[
+				"coffee",
+				"Coffee: Display JavaScript"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"js",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 579.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/yijingbai/Dropbox/study/61c/proj3/matrix/sgemm-openmp.c",
+		"/Users/yijingbai/Dropbox/study/61c/hw4/hw4/hw4fsm.circ",
+		"/Users/yijingbai/Dropbox/study/61c/hw4/hw4/hw4.txt",
+		"/Users/yijingbai/Dropbox/project/CourseFrame/package.json",
+		"/Users/yijingbai/Dropbox/project/CourseFrameFront/Gruntfile.js",
+		"/Users/yijingbai/Dropbox/study/cs61a/proj3/Ants/ants.py",
+		"/Users/yijingbai/SmallWorld.java",
+		"/Users/yijingbai/Dropbox/study/61c/proj2/Small-World-Experiment-with-MapReduce/result1",
+		"/Users/yijingbai/Dropbox/study/61c/proj2/Small-World-Experiment-with-MapReduce/result3",
+		"/Users/yijingbai/Dropbox/study/61c/proj2/Small-World-Experiment-with-MapReduce/result6",
+		"/Users/yijingbai/Dropbox/study/61c/proj2/Small-World-Experiment-with-MapReduce/SmallWorld.java",
+		"/Users/yijingbai/Dropbox/study/61c/proj2/Small-World-Experiment-with-MapReduce/result",
+		"/Users/yijingbai/Dropbox/study/cs61a/homework/test.py",
+		"/Users/yijingbai/Dropbox/study/cs61a/3.js",
+		"/Users/yijingbai/Dropbox/study/cs61a/book/diveintopythonzh-cn-5.4b/py/makerealworddoc.py",
+		"/Users/yijingbai/Library/Application Support/Sublime Text 2/Packages/FileDiffs/FileDiffs.sublime-settings",
+		"/Users/yijingbai/Dropbox/study/cs61a/proj2/trends/geo.py",
+		"/Users/yijingbai/Dropbox/study/cs61a/proj2/trends/data.py",
+		"/Users/yijingbai/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/Users/yijingbai/Library/Application Support/Sublime Text 2/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/yijingbai/Downloads/buildinternet-supersized-8b88de8/README.md",
+		"/Users/yijingbai/Dropbox/study/cs61a/homework/hw4.py",
+		"/Users/yijingbai/Dropbox/study/61c/proj",
+		"/Users/yijingbai/Documents/gdb.txt",
+		"/Users/yijingbai/Downloads/召唤万岁c.txt",
+		"/Users/yijingbai/Desktop/aricle.txt",
+		"/Users/yijingbai/Library/Application Support/Sublime Text 2/Packages/SublimeCodeIntel/Base File.sublime-settings",
+		"/Users/yijingbai/Documents/proj3/loa/MutableBoard.java",
+		"/Users/yijingbai/Documents/proj3/loa/Reporter.java",
+		"/Users/yijingbai/Documents/proj3/loa/Player.java",
+		"/Users/yijingbai/Documents/proj3/loa/UnitTest.java",
+		"/Users/yijingbai/Documents/proj3/loa/Board.java",
+		"/Users/yijingbai/Documents/proj3/loa/Move.java",
+		"/Users/yijingbai/Library/Application Support/Sublime Text 2/Packages/SublimeCodeIntel/Default (OSX).sublime-keymap",
+		"/Users/yijingbai/Library/Application Support/Sublime Text 2/Packages/BracketHighlighter/BracketHighlighter.sublime-settings",
+		"/Users/yijingbai/Documents/proj2/util/QuadTree.java",
+		"/Users/yijingbai/Documents/proj2/tracker/Vehicle.java",
+		"/Users/yijingbai/Documents/proj2/util/TreeNode.java",
+		"/Users/yijingbai/Documents/proj2/tracker/Obposts.java",
+		"/Users/yijingbai/Documents/proj2/tracker/Parser.java",
+		"/Users/yijingbai/Documents/proj2/util/SimpleSet2D.java",
+		"/Users/yijingbai/Documents/proj2/tracker/Main.java",
+		"/Users/yijingbai/Documents/proj2/tracker/Makefile",
+		"/Users/yijingbai/Documents/proj2/tracker/UnitTest.java",
+		"/Users/yijingbai/Documents/proj2/tracker/SimulationController.java",
+		"/Users/yijingbai/Downloads/仙逆转码.txt",
+		"/Users/yijingbai/Documents/proj2/util/SIterator.java",
+		"/Users/yijingbai/Documents/proj2/util/STreeNode.java",
+		"/Users/yijingbai/Documents/proj2/Makefile",
+		"/Users/yijingbai/Documents/proj2/util/QuadTreeNode.java",
+		"/Users/yijingbai/Documents/proj2/util/QuadTreeTest.java",
+		"/Users/yijingbai/Documents/proj2/tracker/Found.java",
+		"/Users/yijingbai/Documents/proj2/tracker/SimulationException.java",
+		"/Users/yijingbai/Documents/proj2/util/sentinel",
+		"/Users/yijingbai/Downloads/pvzMini.js",
+		"/Users/yijingbai/Documents/proj1/puzzle/Parser.java",
+		"/Users/yijingbai/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/yijingbai/Documents/proj1/puzzle/NamedEntity.java",
+		"/Users/yijingbai/Documents/proj1/puzzle/Solve.java",
+		"/Users/yijingbai/Documents/proj1/puzzle/ParseTest.java",
+		"/Users/yijingbai/Documents/proj1/puzzle/Perms.java",
+		"/Users/yijingbai/Documents/proj1/puzzle/Solver.java",
+		"/Users/yijingbai/Dropbox/study/cs61b/lab5/ReadFacts.",
+		"/Users/yijingbai/Dropbox/study/cs61b/{0xABEAC9AD,0x2CE382D7,0xEE44A3A5,0xC38E9FE8,0xACE",
+		"/Users/yijingbai/style61b",
+		"/Users/yijingbai/Documents/cs61a/ex.py",
+		"/Users/yijingbai/Downloads/easwy-share-511697f/vim/vimrc/README.md",
+		"/helloworld.js"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 109.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"Buffer",
+			"Buffer!",
+			"Buffer",
+			"src",
+			"scale_iterator",
+			"make_integer_stream",
+			"?",
+			"karma",
+			"ThrowerAnt",
+			"extra",
+			"time",
+			"action",
+			"start_with_strategy",
+			"colony",
+			"throwerant",
+			"is not none",
+			"System.out.println",
+			"startkey",
+			"getStarter",
+			"neighbour",
+			"Graph",
+			"exampleLongArray",
+			"exampleInt",
+			"EValue",
+			"SequenceFileType",
+			"Path",
+			"EValue",
+			"Configuration",
+			"dispatch",
+			"update",
+			"add",
+			"models",
+			"BookAdmin",
+			"Pub",
+			"books",
+			"book",
+			"Book",
+			"book",
+			"Book",
+			"theme",
+			"[",
+			"a_x_square_interval",
+			"x_square_interval",
+			"temp",
+			"take_turn",
+			"diceResult",
+			"maxNumAllowed",
+			"diceChoosed",
+			"Conitiona",
+			"new Array",
+			"new Array()",
+			"console",
+			"RunSingleBenchmark",
+			"other",
+			"take",
+			"sumCurrentAndOpponent",
+			"sum_of_opponent",
+			"sum_of_oppe",
+			"sumFromOpponent",
+			"commentary",
+			"announce",
+			"connectShark",
+			"startShark",
+			".test()",
+			"berkeley",
+			"places",
+			"uk",
+			"subunit",
+			"uk",
+			"subunit",
+			"uk",
+			"subunit",
+			"subunits",
+			"uk",
+			"subunits",
+			"uk",
+			"call",
+			"push",
+			"console.log",
+			"insert",
+			"result",
+			"return",
+			"case",
+			"str",
+			"location.href",
+			"console.log",
+			"_this",
+			"evalMemberExpr",
+			"console.log",
+			"evalMemberExpr",
+			"window",
+			"loc",
+			"taints",
+			"map",
+			"isSubset",
+			"initSubset",
+			"findSubset",
+			"joinSubset",
+			"getRegionSizes",
+			"joinSubset",
+			"computeRegions",
+			"deepEquals",
+			"joinSubset",
+			"Clump",
+			"pack",
+			"tan",
+			"tank",
+			"label501",
+			"esxoefct",
+			"soft",
+			"epxuesch",
+			"push",
+			"getSystemService",
+			"epxuesch",
+			"getSystemService",
+			"recordlog",
+			"read",
+			"readlog",
+			"epxuesch",
+			"esxoefct",
+			"epxuesch",
+			"label365",
+			"shieldnum",
+			"task",
+			"execTanc",
+			"task",
+			"epxuesch",
+			"target"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"x_square",
+			"[]",
+			"mlabel",
+			"setPosition",
+			",",
+			"False",
+			"True",
+			"XCCodeSignContext",
+			"XCiPhoneOSCodeSignContext",
+			"XCCodeSignContext"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": false,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "buffer.py",
+					"settings":
+					{
+						"buffer_size": 3830,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								71,
+								71
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"function_name_status_row": 1,
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": false,
+							"sublimelinter_mark_style": "outline",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 38.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 136.0
+	},
+	"output.find_results":
+	{
+		"height": 385.0
+	},
+	"output.jsconsole_view":
+	{
+		"height": 0.0
+	},
+	"output.jshint_view":
+	{
+		"height": 0.0
+	},
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"make",
+				"Makefile"
+			],
+			[
+				"pro",
+				"processor.h"
+			],
+			[
+				"main",
+				"enigma/Main.java"
+			],
+			[
+				"",
+				"enigma/Rotor.java"
+			],
+			[
+				"inde",
+				"app/views/posts/index.html.erb"
+			],
+			[
+				"post_c",
+				"app/controllers/posts_controller.rb"
+			],
+			[
+				"post",
+				"app/models/post.rb"
+			],
+			[
+				"20120829063209_create_posts.rb",
+				"db/migrate/20120829063209_create_posts.rb"
+			],
+			[
+				"gem",
+				"Gemfile"
+			],
+			[
+				"data",
+				"config/database.yml"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 191.0,
+	"status_bar_visible": true
+}
