@@ -6,9 +6,10 @@ from scheme_primitives import *
 from scheme_reader import *
 from ucb import main, trace
 
-##############
+#
 # Eval/Apply #
-##############
+#
+
 
 def scheme_eval(expr, env):
     """Evaluate Scheme expression EXPR in environment ENV.
@@ -34,8 +35,8 @@ def scheme_eval(expr, env):
     first, rest = expr.first, expr.second
 
     # Evaluate Combinations
-    if (scheme_symbolp(first) # first might be unhashable
-        and first in LOGIC_FORMS):
+    if (scheme_symbolp(first)  # first might be unhashable
+            and first in LOGIC_FORMS):
         return scheme_eval(LOGIC_FORMS[first](rest, env), env)
     elif first == "lambda":
         return do_lambda_form(rest, env)
@@ -59,7 +60,7 @@ def scheme_apply(procedure, args, env):
     if isinstance(procedure, PrimitiveProcedure):
         return apply_primitive(procedure, args, env)
     elif isinstance(procedure, LambdaProcedure):
-        "*** YOUR CODE HERE ***"# Q12
+        "*** YOUR CODE HERE ***"  # Q12
         lambda_env = procedure.env.make_call_frame(procedure.formals, args)
         return scheme_eval(procedure.body, lambda_env)
 
@@ -68,6 +69,7 @@ def scheme_apply(procedure, args, env):
 
     else:
         raise SchemeError("Cannot call {0}".format(str(procedure)))
+
 
 def apply_primitive(procedure, args, env):
     """Apply PrimitiveProcedure PROCEDURE to a Scheme list of ARGS in ENV.
@@ -78,7 +80,7 @@ def apply_primitive(procedure, args, env):
     >>> apply_primitive(plus, twos, env)
     4
     """
-    "*** YOUR CODE HERE ***" # Q3
+    "*** YOUR CODE HERE ***"  # Q3
     argument_list = []
     for i in range(len(args)):
         argument_list.append(args[i])
@@ -93,11 +95,13 @@ def apply_primitive(procedure, args, env):
 
     return result
 
-################
+#
 # Environments #
-################
+#
+
 
 class Frame(object):
+
     """An environment frame binds Scheme symbols to Scheme values."""
 
     def __init__(self, parent):
@@ -109,12 +113,12 @@ class Frame(object):
         if self.parent is None:
             return "<Global Frame>"
         else:
-            s = sorted('{0}: {1}'.format(k,v) for k,v in self.bindings.items())
+            s = sorted('{0}: {1}'.format(k, v) for k, v in self.bindings.items())
             return "<{{{0}}} -> {1}>".format(', '.join(s), repr(self.parent))
 
     def lookup(self, symbol):
         """Return the value bound to SYMBOL.  Errors if SYMBOL is not found."""
-        "*** YOUR CODE HERE ***"# Q4
+        "*** YOUR CODE HERE ***"  # Q4
         if symbol in self.bindings:
             return self.bindings[symbol]
 
@@ -122,7 +126,6 @@ class Frame(object):
             return self.parent.lookup(symbol)
 
         raise SchemeError("unknown identifier: {0}".format(str(symbol)))
-
 
     def global_frame(self):
         """The global environment at the root of the parent chain."""
@@ -143,7 +146,7 @@ class Frame(object):
         <{a: 1, b: 2, c: 3} -> <Global Frame>>
         """
         frame = Frame(self)
-        "*** YOUR CODE HERE ***"# Q10
+        "*** YOUR CODE HERE ***"  # Q10
         formals_len = len(formals)
         vals_len = len(vals)
 
@@ -151,7 +154,7 @@ class Frame(object):
             raise SyntaxError("too few arguments are given")
 
         if vals_len > formals_len:
-            raise SyntaxError("too many arguments are given") 
+            raise SyntaxError("too many arguments are given")
 
         for i in range(formals_len):
             frame.define(formals[i], vals[i])
@@ -162,7 +165,9 @@ class Frame(object):
         """Define Scheme symbol SYM to have value VAL in SELF."""
         self.bindings[sym] = val
 
+
 class LambdaProcedure(object):
+
     """A procedure defined by a lambda expression or the complex define form."""
 
     def __init__(self, formals, body, env):
@@ -175,14 +180,16 @@ class LambdaProcedure(object):
         self.body = body
         self.env = env
 
-    def __str__(self): 
+    def __str__(self):
         return "(lambda {0} {1})".format(str(self.formals), str(self.body))
 
     def __repr__(self):
         args = (self.formals, self.body, self.env)
         return "LambdaProcedure({0}, {1}, {2})".format(*(repr(a) for a in args))
 
+
 class MuProcedure(object):
+
     """A procedure defined by a mu expression, which has dynamic scope.
      _________________
     < Scheme is cool! >
@@ -210,16 +217,16 @@ class MuProcedure(object):
         return "MuProcedure({0}, {1})".format(*(repr(a) for a in args))
 
 
-#################
+#
 # Special forms #
-#################
+#
 
 def do_lambda_form(vals, env):
     """Evaluate a lambda form with parameters VALS in environment ENV."""
     check_form(vals, 2)
     formals = vals[0]
     check_formals(formals)
-    "*** YOUR CODE HERE ***"# Q8
+    "*** YOUR CODE HERE ***"  # Q8
     if len(vals) == 2:
         return LambdaProcedure(formals, vals[1], env)
     return LambdaProcedure(formals, Pair('begin', vals.second), env)
@@ -232,18 +239,19 @@ def do_mu_form(vals):
     check_formals(formals)
     "*** YOUR CODE HERE ***"
 
+
 def do_define_form(vals, env):
     """Evaluate a define form with parameters VALS in environment ENV."""
     check_form(vals, 2)
     target = vals[0]
     if scheme_symbolp(target):
         check_form(vals, 2, 2)
-        "*** YOUR CODE HERE ***"# A5
+        "*** YOUR CODE HERE ***"  # A5
         env.define(vals[0], scheme_eval(vals[1], env))
         return vals[0]
 
     elif isinstance(target, Pair):
-        "*** YOUR CODE HERE ***" # A9
+        "*** YOUR CODE HERE ***"  # A9
         target_operator = target[0]
         target_operand = target.second
         env.define(target[0], do_lambda_form(Pair(target_operand, vals.second), env))
@@ -251,10 +259,11 @@ def do_define_form(vals, env):
     else:
         raise SchemeError("bad argument to define")
 
+
 def do_quote_form(vals):
     """Evaluate a quote form with parameters VALS."""
     check_form(vals, 1, 1)
-    "*** YOUR CODE HERE ***" # B6
+    "*** YOUR CODE HERE ***"  # B6
     return vals[0]
 
 
@@ -278,18 +287,23 @@ def do_let_form(vals, env):
     return exprs[last], new_env
 
 
-#########################
+#
 # Logical Special Forms #
-#########################
+#
 
 def do_if_form(vals, env):
     """Evaluate if form with parameters VALS in environment ENV."""
     check_form(vals, 2, 3)
     "*** YOUR CODE HERE ***"
+    if scheme_true(scheme_eval(vals[0], env)):  # A13
+        return vals[1]
+    return vals[2]
+
 
 def do_and_form(vals, env):
     """Evaluate short-circuited and with parameters VALS in environment ENV."""
     "*** YOUR CODE HERE ***"
+
 
 def quote(value):
     """Return a Scheme expression quoting the Scheme VALUE.
@@ -302,9 +316,11 @@ def quote(value):
     """
     return Pair("quote", Pair(value, nil))
 
+
 def do_or_form(vals, env):
     """Evaluate short-circuited or with parameters VALS in environment ENV."""
     "*** YOUR CODE HERE ***"
+
 
 def do_cond_form(vals, env):
     """Evaluate cond form with parameters VALS in environment ENV."""
@@ -323,26 +339,28 @@ def do_cond_form(vals, env):
             "*** YOUR CODE HERE ***"
     return okay
 
+
 def do_begin_form(vals, env):
     """Evaluate begin form with parameters VALS in environment ENV."""
     check_form(vals, 1)
-    "*** YOUR CODE HERE ***" # Q7 
+    "*** YOUR CODE HERE ***"  # Q7
     if len(vals) == 1:
         return vals[0]
-    scheme_eval(vals[0],env)    
+    scheme_eval(vals[0], env)
     return do_begin_form(vals.second, env)
 
 LOGIC_FORMS = {
-        "and": do_and_form,
-        "or": do_or_form,
-        "if": do_if_form,
-        "cond": do_cond_form,
-        "begin": do_begin_form,
-        }
+    "and": do_and_form,
+    "or": do_or_form,
+    "if": do_if_form,
+    "cond": do_cond_form,
+    "begin": do_begin_form,
+}
 
 # Utility methods for checking the structure of Scheme programs
 
-def check_form(expr, min, max = None):
+
+def check_form(expr, min, max=None):
     """Check EXPR (default SELF.expr) is a proper list whose length is
     at least MIN and no more than MAX (default: no maximum). Raises
     a SchemeError if this is not the case."""
@@ -354,13 +372,14 @@ def check_form(expr, min, max = None):
     elif max is not None and length > max:
         raise SchemeError("too many operands in form")
 
+
 def check_formals(formals):
     """Check that FORMALS is a valid parameter list, a Scheme list of symbols
     in which each symbol is distinct.
 
     >>> check_formals(read_line("(a b c)"))
     """
-    "*** YOUR CODE HERE ***" # B11
+    "*** YOUR CODE HERE ***"  # B11
     check_distinct = []
     for i in range(len(formals)):
         el = formals[i]
@@ -371,9 +390,9 @@ def check_formals(formals):
         check_type(el, scheme_symbolp, i, 'parameter')
 
 
-##################
+#
 # Tail Recursion #
-##################
+#
 
 def scheme_optimized_eval(expr, env):
     """Evaluate Scheme expression EXPR in environment ENV."""
@@ -393,8 +412,8 @@ def scheme_optimized_eval(expr, env):
         first, rest = expr.first, expr.second
 
         # Evaluate Combinations
-        if (scheme_symbolp(first) # first might be unhashable
-            and first in LOGIC_FORMS):
+        if (scheme_symbolp(first)  # first might be unhashable
+                and first in LOGIC_FORMS):
             "*** YOUR CODE HERE ***"
         elif first == "lambda":
             return do_lambda_form(rest, env)
@@ -409,15 +428,15 @@ def scheme_optimized_eval(expr, env):
         else:
             "*** YOUR CODE HERE ***"
 
-################################################################
+#
 # Uncomment the following line to apply tail call optimization #
-################################################################
+#
 # scheme_eval = scheme_optimized_eval
 
 
-################
+#
 # Input/Output #
-################
+#
 
 def read_eval_print_loop(next_line, env, quiet=False, startup=False,
                          interactive=False, load_files=()):
@@ -435,7 +454,7 @@ def read_eval_print_loop(next_line, env, quiet=False, startup=False,
                     print(result)
         except (SchemeError, SyntaxError, ValueError, RuntimeError) as err:
             if (isinstance(err, RuntimeError) and
-                'maximum recursion depth exceeded' not in err.args[0]):
+                    'maximum recursion depth exceeded' not in err.args[0]):
                 raise
             print("Error:", err)
         except KeyboardInterrupt:  # <Control>-C
@@ -464,10 +483,12 @@ def scheme_load(*args):
     with scheme_open(sym) as infile:
         lines = infile.readlines()
     args = (lines, None) if quiet else (lines,)
+
     def next_line():
         return buffer_lines(*args)
     read_eval_print_loop(next_line, env.global_frame(), quiet=quiet)
     return okay
+
 
 def scheme_open(filename):
     """If either FILENAME or FILENAME.scm is the name of a valid file,
@@ -482,6 +503,7 @@ def scheme_open(filename):
     except IOError as exc:
         raise SchemeError(str(exc))
 
+
 def create_global_frame():
     """Initialize and return a single-frame environment with built-in names."""
     env = Frame(None)
@@ -490,6 +512,7 @@ def create_global_frame():
     env.define("load", PrimitiveProcedure(scheme_load, True))
     add_primitives(env)
     return env
+
 
 @main
 def run(*argv):
@@ -504,6 +527,7 @@ def run(*argv):
             else:
                 input_file = open(argv[0])
                 lines = input_file.readlines()
+
                 def next_line():
                     return buffer_lines(lines)
                 interactive = False
