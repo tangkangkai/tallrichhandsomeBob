@@ -850,7 +850,7 @@ one-through-four
         ;;;
         ((and (> total max-value) (= max-pieces 1)) nil)
         ((and (= total max-value) (= max-pieces 1)) (cons (cons total nil) nil))
-        (else (delete-abundant (merge greater-list (construct max-value (list-partitions (- total max-value) (- max-pieces 1) max-value))
+        (else (delete-redundant (merge greater-list (construct max-value (list-partitions (- total max-value) (- max-pieces 1) max-value))
                                    (merge greater-list (list-partitions total max-pieces (- max-value 1))
                                                         (list-partitions total (- max-pieces 1) max-value )))))
   )
@@ -862,11 +862,11 @@ one-through-four
   ) 
 )
 
-(define (delete-abundant list1) 
+(define (delete-redundant list1) 
   (cond ((eq? list1 nil) nil)
         ((eq? (len list1) 1) list1)
-        ((eq? (car list1) (car (cdr list1))) (cons (car list1) (delete-abundant (cdr (cdr list1)))))
-        (else (cons (car list1) (delete-abundant (cdr list1))))
+        ((eq? (car list1) (car (cdr list1))) (cons (car list1) (delete-redundant (cdr (cdr list1)))))
+        (else (cons (car list1) (delete-redundant (cdr list1))))
   )
 )
         
@@ -881,6 +881,7 @@ one-through-four
 ; Draw the hax image using turtle graphics.
 (define (hax d k)
   ; *** YOUR CODE HERE ***
+
   nil)
 
 
