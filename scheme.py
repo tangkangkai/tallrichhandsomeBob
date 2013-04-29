@@ -5,6 +5,7 @@ eval/apply mutual recurrence, environment model, and read-eval-print loop.
 from scheme_primitives import *
 from scheme_reader import *
 from ucb import main, trace
+import pdb
 
 #
 # Eval/Apply #
@@ -247,6 +248,7 @@ def do_define_form(vals, env):
     if scheme_symbolp(target):
         check_form(vals, 2, 2)
         "*** YOUR CODE HERE ***"  # A5
+        pdb.set_trace()
         env.define(vals[0], scheme_eval(vals[1], env))
         return vals[0]
 
@@ -295,7 +297,7 @@ def do_if_form(vals, env):
     """Evaluate if form with parameters VALS in environment ENV."""
     check_form(vals, 2, 3)
     "*** YOUR CODE HERE ***"
-    if scheme_true(scheme_eval(vals[0], env)):  # A13
+    if scheme_true(scheme_eval(vals[0], env)):
         return vals[1]
     return vals[2]
 
@@ -326,7 +328,7 @@ def quote(value):
 def do_or_form(vals, env):
     """Evaluate short-circuited or with parameters VALS in environment ENV."""
     "*** YOUR CODE HERE ***"
-    for i in range(len(vals)):
+    for i in range(len(vals)):  # B14
         if scheme_true(scheme_eval(vals[i], env)):
             return quote(vals[i])
         if i == len(vals) - 1:
@@ -397,7 +399,7 @@ def check_formals(formals):
         el = formals[i]
 
         if el in check_distinct:
-            raise SchemeError("Symbol is not distinct")
+            raise SchemeError("Symbol is not  distinct")
         check_distinct.append(el)
         check_type(el, scheme_symbolp, i, 'parameter')
 
