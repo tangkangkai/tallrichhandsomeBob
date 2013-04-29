@@ -328,7 +328,7 @@ def do_or_form(vals, env):
     "*** YOUR CODE HERE ***"
     for i in range(len(vals)):
         if scheme_true(scheme_eval(vals[i], env)):
-            return True
+            return quote(vals[i])
         if i == len(vals) - 1:
             return vals[i]
     return False
