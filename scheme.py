@@ -462,7 +462,7 @@ def read_eval_print_loop(next_line, env, quiet=False, startup=False,
             while src.more_on_line:
                 expression = scheme_read(src)
                 result = scheme_eval(expression, env)
-                if not quiet:
+                if not quiet and result is not None: # change for hw13
                     print(result)
         except (SchemeError, SyntaxError, ValueError, RuntimeError) as err:
             if (isinstance(err, RuntimeError) and
