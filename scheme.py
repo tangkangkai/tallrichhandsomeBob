@@ -56,6 +56,7 @@ def scheme_eval(expr, env):
 
 def scheme_apply(procedure, args, env):
     """Apply Scheme PROCEDURE to argument values ARGS in environment ENV."""
+
     if isinstance(procedure, PrimitiveProcedure):
         return apply_primitive(procedure, args, env)
     elif isinstance(procedure, LambdaProcedure):
@@ -70,7 +71,7 @@ def scheme_apply(procedure, args, env):
         if vals_len < formals_len:
             raise SyntaxError("too few arguments are given")
         if vals_len > formals_len:
-            raise SyntaxError("too many arguments are given") 
+            raise SyntaxError("too many arguments are given")
         for i in range(formals_len):
             env.define(procedure.formals[i], args[i])
         return scheme_eval(procedure.body, env)
@@ -256,7 +257,7 @@ def do_define_form(vals, env):
         env.define(vals[0], scheme_eval(vals[1], env))
         return vals[0]
 
-    elif isinstance(target, Pair):
+    elif isinstance(target, Pair) and scheme_symbolp(target[0]):
         "*** YOUR CODE HERE ***" # A9
         target_operator = target[0]
         target_operand = target.second
@@ -457,9 +458,12 @@ def scheme_optimized_eval(expr, env):
         elif first == "quote":
             return do_quote_form(rest)
         elif first == "let":
-            "*** YOUR CODE HERE ***"
+            expr, env = do_let_form(rest, env)
+            return scheme_eval(expr, env)
         else:
-            "*** YOUR CODE HERE ***"
+            procedure = scheme_eval(first, env)
+            args = rest.map(lambda operand: scheme_eval(operand, env))
+            return scheme_apply(procedure, args, env)
 
 ################################################################
 # Uncomment the following line to apply tail call optimization #
