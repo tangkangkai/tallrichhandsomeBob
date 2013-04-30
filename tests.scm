@@ -848,23 +848,22 @@ one-through-four
 ;; A list of all ways to partition TOTAL, where  each partition must
 ;; be at most MAX-VALUE and there are at most MAX-PIECES partitions.
 
-(define (construct element list1) 
+ 
+(define (list-partitions total max-pieces max-value)
+  ; *** YOUR CODE HERE ***]
+  (define (construct element list1) 
   (cond ((eq? list1 nil) nil)
         (else (cons (cons element (car list1)) (construct element (cdr list1))))
   ) 
-)
+  )
 
-(define (delete-abundant list1) 
+  (define (delete-abundant list1) 
   (cond ((eq? list1 nil) nil)
         ((eq? (len list1) 1) list1)
         ((eq? (car list1) (car (cdr list1))) (cons (car list1) (delete-abundant (cdr (cdr list1)))))
         (else (cons (car list1) (delete-abundant (cdr list1))))
   )
-)
-   
-   
-(define (list-partitions total max-pieces max-value)
-  ; *** YOUR CODE HERE ***]
+  )
   (cond ((or (= total 0) (= max-value 0) (= max-pieces 0) (> (/ total max-value) max-pieces)) nil)
         ((< total max-value) (list-partitions total max-pieces (- max-value 1)))
         ;;;
