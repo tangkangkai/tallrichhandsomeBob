@@ -766,6 +766,10 @@ one-through-four
     )
 )
 
+
+
+
+
 (merge < '(1 5 7 9) '(4 8 10))
 ; expect (1 4 5 7 8 9 10)
 (merge > '(9 7 5 1) '(10 8 4 3))
@@ -814,7 +818,7 @@ one-through-four
     )
   )
 )
-  
+
 
 (define us-coins '(50 25 10 5 1))
 (count-change 20 us-coins 18)
