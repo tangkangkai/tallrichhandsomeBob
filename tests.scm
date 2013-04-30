@@ -843,18 +843,6 @@ one-through-four
 
 ;; A list of all ways to partition TOTAL, where  each partition must
 ;; be at most MAX-VALUE and there are at most MAX-PIECES partitions.
-(define (list-partitions total max-pieces max-value)
-  ; *** YOUR CODE HERE ***]
-  (cond ((or (= total 0) (= max-value 0) (= max-pieces 0) (> (/ total max-value) max-pieces)) nil)
-        ((< total max-value) (list-partitions total max-pieces (- max-value 1)))
-        ;;;
-        ((and (> total max-value) (= max-pieces 1)) nil)
-        ((and (= total max-value) (= max-pieces 1)) (cons (cons total nil) nil))
-        (else (delete-abundant (merge greater-list (construct max-value (list-partitions (- total max-value) (- max-pieces 1) max-value))
-                                   (merge greater-list (list-partitions total max-pieces (- max-value 1))
-                                                        (list-partitions total (- max-pieces 1) max-value )))))
-  )
-)
 
 (define (construct element list1) 
   (cond ((eq? list1 nil) nil)
@@ -869,8 +857,22 @@ one-through-four
         (else (cons (car list1) (delete-abundant (cdr list1))))
   )
 )
-        
-; Problem 21 tests rely on corre)ct Problem 18.
+   
+   
+(define (list-partitions total max-pieces max-value)
+  ; *** YOUR CODE HERE ***]
+  (cond ((or (= total 0) (= max-value 0) (= max-pieces 0) (> (/ total max-value) max-pieces)) nil)
+        ((< total max-value) (list-partitions total max-pieces (- max-value 1)))
+        ;;;
+        ((and (> total max-value) (= max-pieces 1)) nil)
+        ((and (= total max-value) (= max-pieces 1)) (cons (cons total nil) nil))
+        (else (delete-abundant (merge greater-list (construct max-value (list-partitions (- total max-value) (- max-pieces 1) max-value))
+                                   (merge greater-list (list-partitions total max-pieces (- max-value 1))
+                                                        (list-partitions total (- max-pieces 1) max-value )))))
+  )
+)
+     
+; Problem 21 tests rely on correct Problem 18.
 (sort-lists (list-partitions 5 2 4))
 ; expect ((4 1) (3 2))
 (sort-lists (list-partitions 7 3 5))
